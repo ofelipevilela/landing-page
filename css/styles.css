@@ -1,0 +1,340 @@
+/* Estilo geral */
+body {
+    font-family: 'Georgia', serif; /* Fonte mais romântica */
+    margin: 0;
+    padding: 0;
+    background-color: #f9e1d1; /* Cor suave de fundo */
+    background: linear-gradient(to right, #f9e1d1, #f28c8c); /* Gradiente suave */
+    color: #333;
+    text-align: center;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #f28c8c; /* Tom de rosa romântico */
+    color: white;
+    padding: 30px;
+    font-size: 2.5em;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Suavizar a sombra */
+}
+
+/* Seções */
+main section {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 90%;
+    border-radius: 15px; /* Bordas arredondadas */
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Título das seções */
+h2 {
+    font-size: 1.8em;
+    font-family: 'Georgia', serif;
+    color: #f28c8c;
+}
+
+/* Galeria */
+.photos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center; /* Garante centralização vertical */
+  height: auto; /* Ajusta dinamicamente à altura da imagem */
+}
+
+.photos img {
+  width: auto; /* Deixa a largura automática para respeitar a proporção */
+  height: 100%; /* Preenche a altura do container */
+  max-width: 100%; /* Garante que a imagem nunca ultrapasse o box */
+  max-height: 100%; /* Evita que a imagem fique maior que o container */
+  object-fit: contain; /* Ajusta a imagem para caber no box mantendo a proporção */
+  border-radius: 10%; /* Mantém as bordas arredondadas */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Rodapé */
+footer {
+    margin-top: 180px;
+    padding: 180px;
+    background-color: #f28c8c;
+    color: white;
+    font-style: italic;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Efeito de transição suave */
+h1, h2, p {
+    transition: all 0.3s ease-in-out;
+}
+
+h1:hover, h2:hover {
+    color: #d17b7b;
+    transform: scale(1.05);
+}
+
+/* Estilo para dispositivos menores */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Ajuste da fonte para telas pequenas */
+    }
+
+    header {
+        font-size: 2em;
+        padding: 20px;
+    }
+
+    main section {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    /* Galeria de fotos - ajusta o layout para telas menores */
+    .photos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .photos img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+
+/* Estilo do Carrossel */
+.carousel {
+  position: relative;
+  max-width: 80%; /* Limita a largura máxima do carrossel */
+  margin: 0 auto; /* Centraliza o carrossel na página */
+  overflow: hidden; /* Esconde os elementos fora da área visível */
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex; /* Garante que o conteúdo interno seja tratado como flex */
+  justify-content: center;
+  align-items: center; /* Centraliza verticalmente */
+}
+
+.carousel-track-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: auto; /* Altura dinâmica com base no conteúdo */
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  align-items: center; /* Garante que os slides fiquem centralizados verticalmente */
+}
+
+.carousel-slide {
+  display: flex; /* Garante que o conteúdo dentro do slide fique centralizado */
+  justify-content: center;
+  align-items: center;
+  min-width: 100%; /* Cada slide ocupa a largura completa do carrossel */
+  height: auto; /* Ajusta dinamicamente à altura da imagem */
+}
+
+.carousel-slide img {
+  display: block;
+  max-width: 100%; /* Limita a largura para caber no container */
+  max-height: 80vh; /* Ajusta a altura máxima para caber na tela */
+  width: auto; /* Mantém a proporção da imagem */
+  height: auto; /* Ajusta automaticamente a altura */
+  object-fit: contain; /* Garante que a imagem se ajuste ao box mantendo a proporção */
+  border-radius: 15px;
+}
+
+/* Botões do carrossel */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.3);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 20%; /* Deixa os botões circulares */
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+
+/* Estilo dos cronômetros */
+.countdown {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.5em;
+  color: #f28c8c;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 15px;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.countdown .time {
+  font-weight: bold;
+  color: #882626;
+}
+.countdown span {
+  margin: 0 5px;
+}
+.music-player {
+  margin: 20px auto;
+  padding: 15px;
+  max-width: 90%;
+  border-radius: 15px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.music-player audio {
+  width: 100%;
+  max-width: 400px; /* Limita o tamanho do player */
+  outline: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.note-container {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 90%;
+  border-radius: 15px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+#note-area {
+  width: 100%;
+  max-width: 400px;
+  height: 150px;
+  font-family: 'Arial', sans-serif;
+  font-size: 1em;
+  padding: 10px;
+  border: 2px solid #f28c8c;
+  border-radius: 10px;
+  background-color: #f9e1d1;
+  color: #333;
+  resize: none;
+}
+
+#save-note {
+  padding: 10px 20px;
+  font-size: 1em;
+  color: white;
+  background-color: #f28c8c;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#save-note:hover {
+  background-color: #d17b7b;
+}
+
+#note-status {
+  font-style: italic;
+  color: #333;
+}
+/* Modal - Sobreposição para exibir imagens maiores */
+.modal {
+  display: none; /* Escondido por padrão */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8); /* Fundo semitransparente */
+}
+
+.modal img {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+#close-modal {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1001;
+  transition: color 0.3s ease;
+}
+
+#close-modal:hover {
+  color: #f28c8c;
+}
+
+button, a {
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+button:hover, a:hover {
+  transform: scale(1.05);
+}
+
+/* Estilo básico para o contêiner de corações */
+#falling-hearts-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  pointer-events: none; /* Evita que os corações interfiram nas interações da página */
+  overflow: hidden;
+}
+
+/* Estilo do coração */
+.falling-heart {
+  position: absolute;
+  font-size: 2rem;
+  color: red;
+  animation: fall 3s linear infinite;
+}
+
+/* Animação dos corações caindo */
+@keyframes fall {
+  0% {
+    transform: translateY(-100px); /* Inicia acima da tela */
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh); /* Cai até o fundo da tela */
+    opacity: 0; /* Desaparece ao atingir o fundo */
+  }
+}
